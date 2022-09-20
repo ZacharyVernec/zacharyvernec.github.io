@@ -1,23 +1,31 @@
 {
-    "title": "Kamran Ahmed",
-    "subtitle": "Lead engineer at Zalando — tech guy with an entrepreneurial spirit and knack for getting things done",
-    "owner": {
-      "name": "Kamran Ahmed",
-      "email": "kamranahmed.se@gmail.com"
+  "owner": {
+    "name": "zonemeen",
+    "email": "miqilin18@gmail.com"
+  },
+  "social": [
+    {
+      "type": "Github",
+      "url": "https://github.com/zonemeen"
     },
-    "social": {
-      "github": "kamranahmedse",
-      "medium": "kamranahmedse",
-      "twitter": "kamranahmedse"
-    },
-    "seo": {
-      "title": "Kamran Ahmed",
-      "description": "Blog of a Software Engineer",
-      "author": "Kamran Ahmed",
-      "keywords": [
-        "blog",
-        "developer blog",
-        "engineering blog"
-      ]
+    {
+      "type": "Twitter",
+      "url": "https://twitter.com/zonemeen"
     }
-  }
+  ],
+  "seo": {
+    "title": "zonemeen's blog",
+    "description": "A front-end engineer's article sharing",
+    "author": "zonemeen",
+    "keywords": [
+      "blog",
+      "javascript",
+      "typescript",
+      "passionate",
+      "self-taught",
+      "career-changed",
+      "front-end developer"
+    ]
+  },
+  "cname": "zonemeen.github.io"
+}
