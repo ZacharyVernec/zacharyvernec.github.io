@@ -10,10 +10,6 @@
       "medium": "kamranahmedse",
       "twitter": "kamranahmedse"
     },
-    "newsletter": {
-      "currentCount": "2,000",
-      "revueUsername": "roadmapsh"
-    },
     "seo": {
       "title": "Kamran Ahmed",
       "description": "Blog of a Software Engineer",
@@ -24,5 +20,4 @@
         "engineering blog"
       ]
     },
-    "cname": "kamranahmed.info"
   }
