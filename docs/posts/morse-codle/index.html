@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="Alex Ellis">
+		
+		<meta name="generator" content="Hugo 0.99.1" />
+		<title>Morse Codle &middot; Caffeinspiration</title>
+		<link rel="shortcut icon" href="https://alexanderell.is/images/favicon.ico">
+		<link rel="stylesheet" href="https://alexanderell.is/css/style.css">
+		<link rel="stylesheet" href="https://alexanderell.is/css/highlight.css">
+		
+
+		
+		<link rel="stylesheet" href="https://alexanderell.is/css/font-awesome.min.css">
+		
+
+		
+		<link href="https://alexanderell.is/index.xml" rel="alternate" type="application/rss+xml" title="Caffeinspiration" />
+		
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Morse Codle"/>
+<meta name="twitter:description" content="This is a game for playing Wordle with Morse Code. JavaScript is needed to run this game. If you don&#39;t have it enabled, I totally get it — I often don&#39;t like it either.     MORSE CODLE                                     q w e r t y u i o p   a s d f g h j k l   Enter z x c v b n m      --    Guess the MORSE CODLE in four tries."/>
+
+	</head>
+
+<noscript>
+  This is a game for playing Wordle with Morse Code.
+
+
+  JavaScript is needed to run this game.  If you don't have it enabled, I totally get it — I <a href="/posts/taking-over-my-clipboard/" target="blank_">often</a> <a href="/posts/attention-javascript" target="blank_">don't like</a> it either.
+</noscript>
+<link rel="stylesheet" href="styles.css">
+
+<div id="game">
+  <div id="title-bar">
+      <div id="help-icon" class="icon">
+      <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+        <path fill="var(--color-tone-1)" d="M11 18h2v-2h-2v2zm1-16C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm0-14c-2.21 0-4 1.79-4 4h2c0-1.1.9-2 2-2s2 .9 2 2c0 2-3 1.75-3 5h2c0-2.25 3-2.5 3-5 0-2.21-1.79-4-4-4z"></path>
+      </svg>
+    </div>
+
+    <div id="morse-codle-title">
+      MORSE CODLE
+    </div>
+
+    <div id="options-icon" class="icon">
+      <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+        <path fill="var(--color-tone-1)" d="M19.14,12.94c0.04-0.3,0.06-0.61,0.06-0.94c0-0.32-0.02-0.64-0.07-0.94l2.03-1.58c0.18-0.14,0.23-0.41,0.12-0.61 l-1.92-3.32c-0.12-0.22-0.37-0.29-0.59-0.22l-2.39,0.96c-0.5-0.38-1.03-0.7-1.62-0.94L14.4,2.81c-0.04-0.24-0.24-0.41-0.48-0.41 h-3.84c-0.24,0-0.43,0.17-0.47,0.41L9.25,5.35C8.66,5.59,8.12,5.92,7.63,6.29L5.24,5.33c-0.22-0.08-0.47,0-0.59,0.22L2.74,8.87 C2.62,9.08,2.66,9.34,2.86,9.48l2.03,1.58C4.84,11.36,4.8,11.69,4.8,12s0.02,0.64,0.07,0.94l-2.03,1.58 c-0.18,0.14-0.23,0.41-0.12,0.61l1.92,3.32c0.12,0.22,0.37,0.29,0.59,0.22l2.39-0.96c0.5,0.38,1.03,0.7,1.62,0.94l0.36,2.54 c0.05,0.24,0.24,0.41,0.48,0.41h3.84c0.24,0,0.44-0.17,0.47-0.41l0.36-2.54c0.59-0.24,1.13-0.56,1.62-0.94l2.39,0.96 c0.22,0.08,0.47,0,0.59-0.22l1.92-3.32c0.12-0.22,0.07-0.47-0.12-0.61L19.14,12.94z M12,15.6c-1.98,0-3.6-1.62-3.6-3.6 s1.62-3.6,3.6-3.6s3.6,1.62,3.6,3.6S13.98,15.6,12,15.6z"></path>
+      </svg>
+    </div>
+  </div>
+
+  <div id="play-button-container">
+    <div id="play-button" class="icon">
+      <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          fill="var(--color-tone-2)" viewBox="0 0 60 60" style="enable-background:new 0 0 60 60;" xml:space="preserve">
+      <g>
+        <path d="M45.563,29.174l-22-15c-0.307-0.208-0.703-0.231-1.031-0.058C22.205,14.289,22,14.629,22,15v30
+          c0,0.371,0.205,0.711,0.533,0.884C22.679,45.962,22.84,46,23,46c0.197,0,0.394-0.059,0.563-0.174l22-15
+          C45.836,30.64,46,30.331,46,30S45.836,29.36,45.563,29.174z M24,43.107V16.893L43.225,30L24,43.107z"/>
+        <path d="M30,0C13.458,0,0,13.458,0,30s13.458,30,30,30s30-13.458,30-30S46.542,0,30,0z M30,58C14.561,58,2,45.439,2,30
+          S14.561,2,30,2s28,12.561,28,28S45.439,58,30,58z"/>
+      </g>
+      </svg>
+    </div>
+  </div>
+
+  <div id="board-container">
+    <div id="board">
+      <div class="game-row">
+        <div class="game-tile" data-state="empty"></div>
+        <div class="game-tile" data-state="empty"></div>
+        <div class="game-tile" data-state="empty"></div>
+        <div class="game-tile" data-state="empty"></div>
+        <div class="game-tile" data-state="empty"></div>
+      </div>
+      <div class="game-row">
+        <div class="game-tile" data-state="empty"></div>
+        <div class="game-tile" data-state="empty"></div>
+        <div class="game-tile" data-state="empty"></div>
+        <div class="game-tile" data-state="empty"></div>
+        <div class="game-tile" data-state="empty"></div>
+      </div>
+      <div class="game-row">
+        <div class="game-tile" data-state="empty"></div>
+        <div class="game-tile" data-state="empty"></div>
+        <div class="game-tile" data-state="empty"></div>
+        <div class="game-tile" data-state="empty"></div>
+        <div class="game-tile" data-state="empty"></div>
+      </div>
+      <div class="game-row">
+        <div class="game-tile" data-state="empty"></div>
+        <div class="game-tile" data-state="empty"></div>
+        <div class="game-tile" data-state="empty"></div>
+        <div class="game-tile" data-state="empty"></div>
+        <div class="game-tile" data-state="empty"></div>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="keyboard">
+    <div class="row">
+      <div class="key" data-key="q">q</div>
+      <div class="key" data-key="w">w</div>
+      <div class="key" data-key="e">e</div>
+      <div class="key" data-key="r">r</div>
+      <div class="key" data-key="t">t</div>
+      <div class="key" data-key="y">y</div>
+      <div class="key" data-key="u">u</div>
+      <div class="key" data-key="i">i</div>
+      <div class="key" data-key="o">o</div>
+      <div class="key" data-key="p">p</div>
+    </div>
+    <div class="row">
+      <div class="spacer half"></div>
+      <div class="key" data-key="a">a</div>
+      <div class="key" data-key="s">s</div>
+      <div class="key" data-key="d">d</div>
+      <div class="key" data-key="f">f</div>
+      <div class="key" data-key="g">g</div>
+      <div class="key" data-key="h">h</div>
+      <div class="key" data-key="j">j</div>
+      <div class="key" data-key="k">k</div>
+      <div class="key" data-key="l">l</div>
+      <div class="spacer half"></div>
+    </div>
+    <div class="row">
+      <div id="enter" class="one-and-a-half key" data-key="↵">Enter</div>
+      <div class="key" data-key="z">z</div>
+      <div class="key" data-key="x">x</div>
+      <div class="key" data-key="c">c</div>
+      <div class="key" data-key="v">v</div>
+      <div class="key" data-key="b">b</div>
+      <div class="key" data-key="n">n</div>
+      <div class="key" data-key="m">m</div>
+      <div id="delete" class="one-and-a-half key" data-key="←">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+          <path fill="var(--color-tone-1)" d="M22 3H7c-.69 0-1.23.35-1.59.88L0 12l5.41 8.11c.36.53.9.89 1.59.89h15c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H7.07L2.4 12l4.66-7H22v14zm-11.59-2L14 13.41 17.59 17 19 15.59 15.41 12 19 8.41 17.59 7 14 10.59 10.41 7 9 8.41 12.59 12 9 15.59z"></path>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- Help Modal -->
+  <!-- <div id="overlay-modal" class="overlay-modal" open> -->
+  <div id="overlay-modal" class="overlay-modal">
+    <div class="modal-content">
+      <div id="close-icon" class="icon">
+      <svg class="game-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+        <path fill="var(--color-tone-1)" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
+      </svg>
+      </div>
+      <div class="instructions">
+        <p>Guess the <strong>MORSE CODLE</strong> in four tries.</p>
+        <p>Hit space or press the play button to hear the word. Each guess must be a valid five-letter word. Hit the enter button to submit.</p>
+        <p>After each guess, the color of the tiles will change to show how close your guess was to the word, and the tile will show the Morse code for that letter.</p>
+        <div class="examples">
+          <p><strong>Examples</strong></p>
+          <div class="example">
+            <div class="board-row">
+              <div class="game-tile" letter="w" data-state="correct" reveal="">.--</div>
+              <div class="game-tile" letter="e" data-state="tbd">.</div>
+              <div class="game-tile" letter="a" data-state="tbd">.-</div>
+              <div class="game-tile" letter="r" data-state="tbd">.-.</div>
+              <div class="game-tile" letter="y" data-state="tbd">-.--</div>
+            </div>
+            <p>The letter <strong>W</strong> is in the word and in the correct spot.</p>
+          </div>
+          <div class="example">
+            <div class="board-row">
+              <div class="game-tile" letter="p" data-state="tbd">.--.</div>
+              <div class="game-tile" letter="i" data-state="present" reveal="">..</div>
+              <div class="game-tile" letter="l" data-state="tbd">.-..</div>
+              <div class="game-tile" letter="l" data-state="tbd">.-..</div>
+              <div class="game-tile" letter="s" data-state="tbd">...</div>
+            </div>
+            <p>The letter <strong>I</strong> is in the word but in the wrong spot.</p>
+          </div>
+          <div class="example">
+            <div class="board-row">
+              <div class="game-tile" letter="v" data-state="tbd">---.</div>
+              <div class="game-tile" letter="a" data-state="tbd">.-</div>
+              <div class="game-tile" letter="g" data-state="tbd">--.</div>
+              <div class="game-tile" letter="u" data-state="absent" reveal="">..-</div>
+              <div class="game-tile" letter="e" data-state="tbd">.</div>
+            </div>
+            <p>The letter <strong>U</strong> is not in the word in any spot.</p>
+          </div>
+        </div>
+        <p><strong>A new MORSE CODLE will be available each day! You can also enable random mode to get a new word every time you refresh.<strong></strong></strong></p><strong><strong>
+      </strong></strong></div>
+    </div>
+  </div>
+</div>
+
+<!-- Options Modal -->
+<!-- <div id="options-overlay-modal" class="overlay-modal" open> -->
+<div id="options-overlay-modal" class="overlay-modal">
+  <div class="modal-content">
+    <div id="options-close-icon" class="icon">
+      <svg class="game-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+        <path fill="var(--color-tone-1)" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
+      </svg>
+    </div>
+    <div class="settings">
+      <div id="settings-title">
+        Settings
+      </div>
+      <div class="setting">
+        <div class="text">
+          <div class="title">
+            Full speed
+          </div>
+          <div class="description">
+            No additional space in between letters
+          </div>
+        </div>
+        <div class="switch" id="speed-switch">
+          <span class="knob" id="speed-knob"></span>
+        </div>
+      </div>
+      <div class="setting">
+        <div class="text">
+          <div class="title">
+            Hard mode
+          </div>
+          <div class="description">
+            Only one playthrough per guess
+          </div>
+        </div>
+        <div class="switch" id="hard-switch">
+          <span class="knob" id="hard-knob"></span>
+        </div>
+      </div>
+      <div class="setting">
+        <div class="text">
+          <div class="title">
+            Random mode
+          </div>
+          <div class="description">
+            Instead of using the word of the day, use a new random word every time you refresh the page.
+          </div>
+        </div>
+        <div class="switch" id="random-switch">
+          <span class="knob" id="random-knob"></span>
+        </div>
+      </div>
+      <div class="setting">
+        <div class="text">
+          <div class="title">
+            Feedback
+          </div>
+        </div>
+        <div class="settings-link">
+          <a href="https://twitter.com/lxmkls" target="blank_">
+            Twitter
+          </a>
+        </div>
+      </div>
+      <div class="setting">
+        <div class="text">
+          <div class="title">
+            Questions?
+          </div>
+        </div>
+        <div class="settings-link">
+          <a href="/posts/morse-codle/faq.txt" target="blank_">
+            FAQ
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Options Modal -->
+<!-- <div id="options-overlay-modal" class="overlay-modal" open> -->
+<div id="done-overlay-modal" class="overlay-modal">
+  <div class="modal-content">
+    <div id="done-close-icon" class="icon">
+    <svg class="game-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+      <path fill="var(--color-tone-1)" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
+    </svg>
+  </div>
+  <div class="done">
+    <div id="done-title"></div>
+    <div id="done-subtitle"></div>
+    <div id="done-text">
+      You can wait for tomorrow for a new game, or if you want a new challenge now, you can enable Random mode and refresh the page.
+    </div>
+    <div class="setting">
+      <button id="share-button">Share</button>
+    </div>
+  </div>
+</div>
+
+<script src="/posts/morse-codle/text/clipboard-polyfill.text.js"></script>
+
+<script src="constants.js"></script>
+<script src="morse-code.js"></script>
+<script src="morse-codle.js"></script>

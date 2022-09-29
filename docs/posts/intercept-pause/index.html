@@ -1,0 +1,147 @@
+    <!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="Alex Ellis">
+		
+		<meta name="generator" content="Hugo 0.99.1" />
+		<title>Dark pattern for autoplaying videos: clickjacking pause &middot; Caffeinspiration</title>
+		<link rel="shortcut icon" href="https://alexanderell.is/images/favicon.ico">
+		<link rel="stylesheet" href="https://alexanderell.is/css/style.css">
+		<link rel="stylesheet" href="https://alexanderell.is/css/highlight.css">
+		
+
+		
+		<link rel="stylesheet" href="https://alexanderell.is/css/font-awesome.min.css">
+		
+
+		
+		<link href="https://alexanderell.is/index.xml" rel="alternate" type="application/rss+xml" title="Caffeinspiration" />
+		
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Dark pattern for autoplaying videos: clickjacking pause"/>
+<meta name="twitter:description" content="I recently saw a common clickjacking dark pattern when trying to pause a video the other day.
+On a Bloomberg news autoplaying video, the sound is initially muted.
+Clicking anywhere on the video will unmute it. It would be pretty easy to have an invisible element overlaying the video that listens for a click, and it looks like that&#39;s probably what we have here: What&#39;s interesting is that the control panel (pause, play, scrubbing, etc."/>
+
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='https://alexanderell.is/'> <span class="arrow">←</span>Home</a>
+	
+	<a href='https://alexanderell.is/posts'>Archive</a>
+	<a href='https://alexanderell.is/tags'>Tags</a>
+	<a href='https://alexanderell.is/about'>About</a>
+
+	
+
+	
+	<a class="cta" href="https://alexanderell.is/index.xml">RSS</a>
+	
+</nav>
+
+
+        <section id="wrapper">
+            <article class="post">
+                <header>
+                    <h1>
+                        Dark pattern for autoplaying videos: clickjacking pause
+                    </h1>
+                    <h2>
+                        
+                    </h2>
+                    <h2 class="headline">
+                    Oct 24, 2019
+                    · 154 words
+                    · 1 minute read
+                      <span class="tags">
+                            <a href="https://alexanderell.is/tags/ux">UX</a>, <a href="https://alexanderell.is/tags/design-in-the-wild">Design in the wild</a>
+                      </span>
+                    </h2>
+                </header>
+                
+                <section id="post-body">
+                    <p>I recently saw a common <a href="https://en.wikipedia.org/wiki/Clickjacking">clickjacking</a> dark pattern when trying to pause a video the other day.</p>
+<p>On a Bloomberg news autoplaying video, the sound is initially muted.</p>
+<br>
+<p><img src="autoplay-video.png" alt="Screenshot of autoplaying Bloomberg video"></p>
+<br>
+Clicking anywhere on the video will unmute it. It would be pretty easy to have an invisible element overlaying the video that listens for a click, and it looks like that's probably what we have here:
+<br>
+<p><img src="overlay.png" alt="Screenshot of devtools focusing on video overlay element"></p>
+<br>
+What's interesting is that the control panel (pause, play, scrubbing, etc.) at the bottom of the video is initially shown for a few seconds. This makes it look like you can click it.
+<p>If you try to click pause, your click will instead be intercepted by that covering layer and unmute the video. Only then is the control panel clickable.</p>
+<br>
+<p><video autoplay loop muted playsinline>
+  <source src="hidden-pause.webm"  type="video/webm">
+  <source src="hidden-pause.mp4"  type="video/mp4">
+</video>
+
+<br></p>
+<ul>
+<li><strong>User action</strong>: mouse click on pause button</li>
+<li><strong>Expected result</strong>: pause video</li>
+<li><strong>Actual result</strong>: unmute video</li>
+</ul>
+<p>Classic misdirection.  News websites are notorious for bad UX, and Bloomberg lives up to hype.</p>
+
+                </section>
+            </article>
+
+            
+
+            
+
+            
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://github.com/alexanderellis">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://alexanderell.is">
+        <i class="fa fa-home"></i>
+    </a>
+    
+    <a class="symbol" href="https://twitter.com/lxmkls">
+        <i class="fa fa-twitter-square"></i>
+    </a>
+    
+
+
+</div>
+
+    
+    <p class="small">
+    
+       © Copyright 2022
+    
+    </p>
+</footer>
+
+        </section>
+
+        <script src="https://alexanderell.is/js/jquery-2.2.4.min.js"></script>
+<script src="https://alexanderell.is/js/main.js"></script>
+<script src="https://alexanderell.is/js/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+    </body>
+</html>
