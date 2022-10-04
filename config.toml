@@ -1,0 +1,75 @@
+# Site settings
+baseURL = "https://zacharyvernec.github.io/"
+# HTML Language Code Reference, such as en, zh-cn
+languageCode = "en"
+title = "Caffeinspiration"
+theme = "hugo-theme-cactus-plus"
+# Enter your tracking code to enable Google Analytics
+googleAnalytics = ""
+hasCJKLanguage = true
+publishDir = "docs"
+
+[params]
+  name = "Alex Ellis"
+  description = ""
+  bio = "Writing about tech, our minds, and how things work."
+  # Enter optionally your twitter account
+  twitter = "lxmkls"
+  enableRSS = true
+
+  # Disqus comment
+  disqusShortname = "your_disqus_short_name"
+  # Disable disqus comments by set `enableDisqus = "false"`
+  enableDisqus = false
+
+  enableGithubIssuesTips = false
+
+  # Enable googleAnalytics
+  enableGoogleAnalytics = false
+
+  # Enable baiduAnalytics
+  enableBaiduAnalytics = false
+
+  # Add custom assets with their paths relative to the static folder
+  customCSS = []
+  customJS  = []
+
+  # The variables below are optionally too and can be used to
+  # translate or customize each string of the theme.
+
+  # Navigation links
+  home = ""
+  about = ""
+  archive = ""
+  subscribe = ""
+  tags = ""
+  # Pagination links
+  olderPosts = ""
+  newerPosts = ""
+  readMore = ""
+  copyright = ""
+  # Sharing options and author information in posts
+  aboutAuthor = ""
+  tweet = ""
+  share = ""
+  # 404 page
+  title404 = ""
+  subtitle404 = ""
+
+  # Choose a font for the social icons in the footer. Either "mono-social" or "font-awesome"
+  iconFont = "font-awesome"
+  # The social icons can be styled differently if you use mono as font - circle, rounded, or empty
+  socialIconStyle = ""
+
+  # This makes absolute links open in new tabs
+  hrefTargetBlank = true
+
+# Add additional social link entries underneath
+[social]
+  github-square = "https://github.com/alexanderellis"
+  twitter-square = "https://twitter.com/lxmkls"
+  home = "https://alexanderell.is"
+
+  [markup.goldmark.renderer]
+  unsafe= true
+

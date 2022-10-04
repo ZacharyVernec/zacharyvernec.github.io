@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://zacharyvernec.github.io/</loc>
+    <lastmod>2022-05-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://zacharyvernec.github.io/posts/</loc>
+    <lastmod>2022-05-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://zacharyvernec.github.io/posts/default/</loc>
+    <lastmod>2022-05-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://zacharyvernec.github.io/about/</loc>
+    <lastmod>2015-06-20T14:02:37+02:00</lastmod>
+  </url><url>
+    <loc>https://zacharyvernec.github.io/tags/</loc>
+    <lastmod>2015-06-20T14:02:37+02:00</lastmod>
+  </url><url>
+    <loc>https://zacharyvernec.github.io/posts/3-first-night/</loc>
+  </url><url>
+    <loc>https://zacharyvernec.github.io/posts/4-tteokbokki/</loc>
+  </url><url>
+    <loc>https://zacharyvernec.github.io/posts/5-chips/</loc>
+  </url><url>
+    <loc>https://zacharyvernec.github.io/posts/6-covid-test/</loc>
+  </url><url>
+    <loc>https://zacharyvernec.github.io/categories/</loc>
+  </url>
+</urlset>

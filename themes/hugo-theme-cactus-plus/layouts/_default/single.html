@@ -1,0 +1,52 @@
+    {{ partial "head.html" . }}
+    <body>
+       {{ partial "nav.html" . }}
+
+        <section id="wrapper">
+            <article class="post">
+                <header>
+                    <h1>
+                        {{ .Title }}
+                    </h1>
+                    <h2>
+                        {{ .Params.Subtitle }}
+                    </h2>
+                    <h2 class="headline">
+                    {{ .Date.Format "Jan 2, 2006" }}
+                    · {{ if lt 1 .WordCount }}{{ .WordCount }} words{{ else }}{{ .WordCount }} word{{ end }}
+                    · {{ if eq 1 .ReadingTime }}{{ .ReadingTime }} minute read{{ else }}{{ .ReadingTime }} minutes read{{ end }}
+                      <span class="tags">
+                            {{ range $i, $e := .Params.tags }}{{ if $i }}, {{ end }}<a href="{{ $.Site.BaseURL }}tags/{{ . | urlize }}">{{ . }}</a>{{ end }}
+                      </span>
+                    </h2>
+                </header>
+                {{ if .Site.Params.enableToc }}
+                  {{ if .TableOfContents }}
+                    <div id="toc">
+                      {{ .TableOfContents }}
+                    </div>
+                  {{ end }}
+                {{ end }}
+                <section id="post-body">
+                    {{ .Content }}
+                </section>
+            </article>
+
+            {{ if .Site.Params.enableGithubIssuesTips }}
+                {{ partial "github-issues-tip.html" . }}
+            {{ end }}
+
+            {{ if .Site.Params.enableDisqus }}
+                {{ partial "disqus.html" . }}
+            {{ end }}
+
+            {{ if .Site.Params.enableDuoshuo }}
+                {{ partial "duoshuo.html" . }}
+            {{ end }}
+
+            {{ partial "footer.html" . }}
+        </section>
+
+        {{ partial "js.html" . }}
+    </body>
+</html>

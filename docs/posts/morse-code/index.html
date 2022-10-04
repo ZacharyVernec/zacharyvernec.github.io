@@ -1,0 +1,296 @@
+    <!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="Alex Ellis">
+		
+		<meta name="generator" content="Hugo 0.99.1" />
+		<title>Little games to play with Morse Code in your browser &middot; Caffeinspiration</title>
+		<link rel="shortcut icon" href="https://alexanderell.is/images/favicon.ico">
+		<link rel="stylesheet" href="https://alexanderell.is/css/style.css">
+		<link rel="stylesheet" href="https://alexanderell.is/css/highlight.css">
+		
+
+		
+		<link rel="stylesheet" href="https://alexanderell.is/css/font-awesome.min.css">
+		
+
+		
+		<link href="https://alexanderell.is/index.xml" rel="alternate" type="application/rss+xml" title="Caffeinspiration" />
+		
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Little games to play with Morse Code in your browser"/>
+<meta name="twitter:description" content="Be sure to also check out my other Morse code game, Morse Codle, a daily Morse code Wordle puzzle.
+This is a pair of games for playing with Morse Code. Since the games play the signals as sound, I recommend headphones (wired if possible for the latency) and a low volume. Game options are available towards the bottom.
+ Unfortunately, JavaScript is needed to run these games. The only JS running on my site is for the games (no tracking, etc) if you want to enable it."/>
+
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='https://alexanderell.is/'> <span class="arrow">←</span>Home</a>
+	
+	<a href='https://alexanderell.is/posts'>Archive</a>
+	<a href='https://alexanderell.is/tags'>Tags</a>
+	<a href='https://alexanderell.is/about'>About</a>
+
+	
+
+	
+	<a class="cta" href="https://alexanderell.is/index.xml">RSS</a>
+	
+</nav>
+
+
+        <section id="wrapper">
+            <article class="post">
+                <header>
+                    <h1>
+                        Little games to play with Morse Code in your browser
+                    </h1>
+                    <h2>
+                        
+                    </h2>
+                    <h2 class="headline">
+                    Feb 4, 2022
+                    · 747 words
+                    · 4 minutes read
+                      <span class="tags">
+                            
+                      </span>
+                    </h2>
+                </header>
+                
+                <section id="post-body">
+                    <p><em>Be sure to also check out my other Morse code game, <a href="/posts/morse-codle">Morse Codle</a>, a daily Morse code Wordle puzzle.</em></p>
+<p>This is a pair of games for playing with Morse Code. Since the games play the signals as sound, I recommend headphones (wired if possible for the latency) and a low volume. Game options are available towards the bottom.</p>
+<link rel="stylesheet" href="styles.css">
+<noscript>
+  Unfortunately, JavaScript is needed to run these games. The only JS running on my site is for the games (no tracking, etc) if you want to enable it. The good news is that if you're disabling JavaScript, you probably already know some Morse Code :)
+</noscript>
+<h1 id="morse-code-listening-game">Morse Code Listening Game</h1>
+<p>In this game, it will play a word in Morse Code, and you have to type in the word.</p>
+<br>
+<div class="game-container">
+  <button id="playListeningGame" class="start-button">Start</button>
+  <br>
+  <p id="status" class="display-message">Press Start to begin.</p>
+  <input type="text" id="wordInput" class="input" placeholder="Enter message" autocomplete="off" disabled>
+  <br>
+  <div class="button-container">
+    <button id="submitButton" class="interaction-button" disabled>Enter</button>
+    <button id="resetButton" class="interaction-button" disabled>Replay</button>
+  </div>
+</div>
+<br>
+<br>
+<details>
+  <summary>How to play the listening game</summary>
+  <br>
+<p>As you hear the Morse Code, enter the letters (or words!) that you hear. Press Enter (either the button or on your keyboard) to see if you got it, and press Replay (or Control on your keyboard) to hear it again.</p>
+<p>For doing Morse to letter lookups, I find it helpful to look at a tree-shaped diagram, where you can follow from one node to the next based on whether it&rsquo;s a dit or a dah.
+<a href="https://upload.wikimedia.org/wikipedia/commons/1/19/Morse-code-tree.svg" target="blank_">
+<img src="https://upload.wikimedia.org/wikipedia/commons/1/19/Morse-code-tree.svg" alt="Binary Tree-shaped diagram of letters and their corresponding Morse Code representation.">
+</a>
+<a href="https://commons.wikimedia.org/wiki/File:Morse-code-tree.svg">Source</a></p>
+
+</details>
+<br>
+<h1 id="morse-code-speaking-game">Morse Code &ldquo;Speaking&rdquo; Game</h1>
+<p>For the speaking game, it will show a word, and you&rsquo;ll have to enter it in Morse Code.</p>
+<div class="game-container">
+  <button id="playInputGame" class="start-button">Start</button>
+  <p id="inputStatus" class="display-message"></p>
+  <p id="targetDisplay" class="display-message">Press Start to begin.</p>
+  <p id="inputDisplay" class="display-message morse-input"></p>
+  <div class="button-container">
+  <button id="signalButton" class="interaction-button" disabled>Tap</button>
+  <button id="startOverButton" class="interaction-button" disabled>Try Again</button>
+  </div>
+</div>
+<br>
+<br>
+<details>
+  <summary>How to play the speaking game</summary>
+  <p>Press start to reveal the target. Enter Morse Code with your spacebar or the Tap button. Press Control or the Try Again button to clear your input and start over.</p>
+<p>The game will assume you&rsquo;re done with a letter after the letter gap interval (see options below), and it will automatically insert a space for you after the word interval; be careful you don&rsquo;t take too long in between dits!</p>
+<p>For doing letter to Morse lookups, I find it helpful to look at an alphabetical list with the matching representation. This makes looking up a letter faster.
+<a href="https://upload.wikimedia.org/wikipedia/commons/1/19/Morse-code-tree.svg" target="blank_">
+<img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/International_Morse_Code.svg" alt="Alphabetical list of letters and their corresponding Morse Code representation">
+</a>
+<a href="https://en.wikipedia.org/wiki/File:International_Morse_Code.svg">Source</a></p>
+
+</details>
+<br>
+<h2 id="game-options">Game options</h2>
+<p>After changing settings, you have to stop and restart the above games.</p>
+<h3 id="difficulty">Difficulty</h3>
+<legend>Please select your preferred difficulty:</legend>
+<div>
+  <input type="radio" id="difficultyEasy"
+    name="difficulty" value="easy" checked>
+  <label for="difficultyEasy">Easy (letters)</label>
+  <br>
+  <input type="radio" id="difficultyMedium" name="difficulty" value="medium">
+  <label for="difficultyMedium">Medium (short words)</label>
+  <br>
+  <input type="radio" id="difficultyHard" name="difficulty" value="hard">
+  <label for="difficultyHard">Hard (multiple short words)</label>
+  <br>
+  <input type="radio" id="difficultyVeryHard" name="difficulty" value="really-hard">
+  <label for="difficultyVeryHard">Very Hard (multiple words)</label>
+</div>
+<br>
+<br>
+<h3 id="speed">Speed</h3>
+<legend>Please select your preferred speed:</legend>
+<div>
+  <input type="radio" id="speedEasy"
+    name="speed" value="easy" checked>
+  <label for="speedEasy">Slow</label>
+  <br>
+  <input type="radio" id="speedMedium" name="speed" value="medium" >
+  <label for="speedMedium">Medium</label>
+  <br>
+  <input type="radio" id="speedHard" name="speed" value="hard">
+  <label for="speedHard">Fast</label>
+  <br>
+  <input type="radio" id="speedHarder" name="speed" value="harder">
+  <label for="speedHarder">Faster</label>
+</div>
+<br>
+<legend>Use the Farnsworth method?</legend>
+<div>
+  <input type="radio" id="yesFarnsworth" name="farnsworth" value="yes" checked>
+  <label for="yesFarnsworth">Yes</label>
+  <br>
+  <input type="radio" id="noFarnsworth"
+    name="farnsworth" value="no">
+  <label for="noFarnsworth">No</label>
+</div>
+<br>
+<p>The speeds match the following from Wikipedia:</p>
+<p><em>The duration of a dah is three times the duration of a dit. Each dit or dah within an encoded character is followed by a period of signal absence, called a space, equal to the dit duration. The letters of a word are separated by a space of duration equal to three dits, and words are separated by a space equal to seven dits.</em></p>
+<div id="speed-table">
+<table>
+<thead>
+<tr>
+<th>Speed</th>
+<th>Dit (ms)</th>
+<th>Dash (ms)</th>
+<th>Letter gap (ms)</th>
+<th>Word gap (ms)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Slow</td>
+<td>300</td>
+<td>900</td>
+<td>900</td>
+<td>2100</td>
+</tr>
+<tr>
+<td>Medium</td>
+<td>200</td>
+<td>600</td>
+<td>600</td>
+<td>1400</td>
+</tr>
+<tr>
+<td>Fast</td>
+<td>100</td>
+<td>300</td>
+<td>300</td>
+<td>700</td>
+</tr>
+<tr>
+<td>Very Fast</td>
+<td>60</td>
+<td>180</td>
+<td>180</td>
+<td>420</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>But, that being said, the <a href="https://www.google.com/search?q=Farnsworth+method">Farnsworth method</a> varies the intervals between the letters and the word gap instead of varying the length of the dits, dashes, or character gaps. It is more helpful for learning the sounds of each letter at a real speed you would hear it.</p>
+<p>All times are in milliseconds. I recommend starting with slow and giving yourself plenty of time for the dahs, then increasing the speed as you go!</p>
+<br>
+<h2 id="issuesquestions">Issues/questions</h2>
+<h4 id="something-went-wrong"><em>Something went wrong?</em></h4>
+<p>You may need to refresh — it&rsquo;s a little rough around the edges.</p>
+<h4 id="something-went-wrong-on-ios"><em>Something went wrong on iOS?</em></h4>
+<p>First, make sure your phone is unsilenced (turns out a silenced phone blocks the web audio APIs). You also may need to tap Start and Stop a few times, refresh, or start with the &ldquo;speaking&rdquo; game. I ran into an issue with initializing the AudioContext, and although I think I got it right, I&rsquo;m sorry if it&rsquo;s giving you trouble.</p>
+<h4 id="why-is-it-so-quick-with-the-spaces-when-listening"><em>Why is it so quick with the spaces when listening?</em></h4>
+<p>Sorry, it was easiest to be super strict about the timing when making it. Try slowing the speed down or practicing to go faster!</p>
+<h4 id="how-does-it-work"><em>How does it work?</em></h4>
+<p>You can read about it <a href="/posts/writing-morse-code-games">here</a>, and you can see the source code <a href="morse-code.js">here</a> and <a href="constants.js">here</a>, though it&rsquo;s very unpolished.</p>
+<h4 id="any-recommendations-for-learning-morse-code-for-real"><em>Any recommendations for learning Morse Code for real?</em></h4>
+<p>I&rsquo;m far from an expert, but so far I&rsquo;ve seen a few recommendations (thanks to curiousfab and SaberTail on HN):</p>
+<ul>
+<li><a href="https://morsecode.world/international/trainer/trainer.html">https://morsecode.world/international/trainer/trainer.html</a></li>
+<li><a href="https://lcwo.net/">https://lcwo.net/</a></li>
+<li><a href="http://www.elkins.org/">http://www.elkins.org/</a></li>
+</ul>
+<script src="constants.js"></script>
+<script src="morse-code.js"></script>
+
+                </section>
+            </article>
+
+            
+
+            
+
+            
+
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    <a class="symbol" href="https://github.com/alexanderellis">
+        <i class="fa fa-github-square"></i>
+    </a>
+    
+    <a class="symbol" href="https://alexanderell.is">
+        <i class="fa fa-home"></i>
+    </a>
+    
+    <a class="symbol" href="https://twitter.com/lxmkls">
+        <i class="fa fa-twitter-square"></i>
+    </a>
+    
+
+
+</div>
+
+    
+    <p class="small">
+    
+       © Copyright 2022
+    
+    </p>
+</footer>
+
+        </section>
+
+        <script src="https://alexanderell.is/js/jquery-2.2.4.min.js"></script>
+<script src="https://alexanderell.is/js/main.js"></script>
+<script src="https://alexanderell.is/js/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+    </body>
+</html>
