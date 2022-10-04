@@ -7,7 +7,7 @@ theme = "hugo-theme-cactus-plus"
 # Enter your tracking code to enable Google Analytics
 googleAnalytics = ""
 hasCJKLanguage = true
-publishDir = "docs"
+publishDir = "public"
 
 [params]
   name = "Alex Ellis"
