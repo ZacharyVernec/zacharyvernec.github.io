@@ -1,5 +1,5 @@
 # Site settings
-baseURL = "https://alexanderell.is/"
+baseURL = "https://zacharyvernec.github.io/"
 # HTML Language Code Reference, such as en, zh-cn
 languageCode = "en"
 title = "Caffeinspiration"
